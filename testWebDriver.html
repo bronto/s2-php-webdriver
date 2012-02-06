@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Selenium WebDriver Testing</title>
+
+		<style type="text/css">
+			body {
+				background-color: #333333; color: #FFFFFF;
+				font: normal 12px/1.5em "Lucida Grande", "Verdana", sans-serif;
+				width: 550px;
+			}
+
+			a {
+				color: #FFCC00;
+				text-decoration: none;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			h3 {
+				font-weight: bold;
+			}
+
+			input {
+				border: 1px solid;
+			}
+
+			p.header {
+				font-weight: bold;
+			}
+
+			#selenium-icon {
+				float: left; padding: 0 10px 5px 0;
+				height: 43px; width: 48px;
+			}
+
+			#testContent {
+				background-color: #CECECE; color: #000000;
+				margin-top: 30px; padding: 15px;
+				text-align: left;
+			}
+
+			#testContent .field {
+				margin-bottom: 10px;
+				width: 275px;
+			}
+
+			#testContent .field input {
+				width: 200px;
+			}
+
+			#testContent .field input.option {
+				height: 10px; width: 10px;
+			}
+
+			#testContent .field select {
+				border: 1px solid #000000;
+				width: 200px;
+			}
+
+			#testContent .field textarea {
+				border: 1px solid #000000;
+				height: 100px; width: 250px;
+			}
+
+			#testHidden {
+				display: none;
+			}
+		</style>
+
+		<script type="text/javascript">
+			var doAlert = function() {
+				alert('This is an alert!');
+				setForm('Alan Alertable', 'I like to grab attention.');
+			}
+
+			var doConfirm = function() {
+				if (!confirm('This is a confirmation!')) {
+					setForm('Carl Confirmer', 'I need validation of everything!');
+				}
+			}
+
+			var doPrompt = function() {
+				var response = window.prompt('Enter any string of text:');
+				setForm('Penny Prompter', response);
+			}
+
+			var doEvent = function(e) {
+				event = window.event ? window.event : e;
+				setEvent(event.type, event.button);
+			}
+
+			var doSelenium = function() {
+				setForm('Jane Doe', 'I love Selenium testing!');
+			}
+
+			var doSelenium2 = function() {
+				setForm('John Doe', 'Even better than one, is two!', 'click');
+			}
+
+			var setEvent = function(type, button) {
+				var testForm = document.forms['testForm'];
+				testForm.elements['testEvent'].value = type;
+				testForm.elements['testButton'].value = button;
+			}
+
+			var setForm = function(name, desc, method) {
+				var testForm = document.forms['testForm'];
+				testForm.elements['testName'].value = name;
+				testForm.elements['testDesc'].value = desc;
+				testForm.elements['testMethod'].value = method;
+				return false;
+			}
+
+			document.oncontextmenu = function() {
+				return false;
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<h3><a onclick="doSelenium(); doEvent(event);" href="javascript:void(0);">Selenium</a> <span onmousedown="doEvent(event);">WebDriver</span> <span ondblclick="doEvent(event);">Testing</span></h3>
+
+		<img onmouseup="doSelenium2(); doEvent(event);" alt="Selenium" border="0" id="selenium-icon" src="http://i.imgur.com/C5llX.png" height="43" width="48" />
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus est non nisi aliquam vel luctus augue auctor. Nullam porta congue elit, in lobortis odio commodo sed. Nulla non nunc a elit euismod malesuada vitae hendrerit sapien. Maecenas sagittis viverra sapien. Cras nec nisi ligula. Vestibulum rutrum nulla in nunc ullamcorper ullamcorper. In erat dui, fringilla vitae varius non, cursus quis justo. Nullam ullamcorper tellus felis. Ut convallis, arcu eu pharetra faucibus, orci ipsum suscipit felis, a laoreet massa ante a tortor. Pellentesque porttitor hendrerit tincidunt. Aenean lacus felis, pellentesque vel scelerisque vel, ornare non nulla. Phasellus malesuada sem sit amet augue placerat ullamcorper. Aenean magna magna, sodales in porta et, congue non dolor. Fusce porta facilisis justo ac volutpat. Vivamus tristique, elit nec placerat imperdiet, tellus ante feugiat nisl, ut tempus nisi erat in justo. Morbi eu velit ut risus pharetra tempus. Sed at lacus justo, ut ornare libero. Curabitur sodales erat sed velit lobortis a mattis quam pretium. Aliquam quis quam elit. In hac habitasse platea dictumst. Sed gravida, sem posuere semper rutrum, nisl justo sagittis velit, quis tempor nunc augue nec elit.</p>
+		<p>Vestibulum mollis lorem nec nunc fringilla pellentesque. Curabitur ullamcorper sapien eu leo lobortis vulputate. Vestibulum tincidunt elementum fermentum. In ac dui sit amet quam lacinia sodales. Nulla nisi libero, pretium nec facilisis id, ultrices tempor sem. Cras vestibulum aliquet mauris, ac volutpat est iaculis vel. Nulla sit amet diam nec quam lacinia tempor non non dolor. Nam ac lectus tempor lectus volutpat vehicula sed a lectus. Vivamus metus quam, viverra a tincidunt quis, ultricies sed purus. Sed porta vehicula tortor, sit amet fringilla sapien fermentum ut. Nulla in orci quis nulla bibendum aliquam. Nam at varius lorem. Donec imperdiet tincidunt mollis.</p>
+		<p>Aenean sit amet nisl dolor, vitae facilisis mi. Nulla hendrerit posuere ornare. Donec vitae velit nulla, quis dapibus mi. Praesent id placerat nibh. Etiam ultrices, nisl nec tristique porttitor, sem turpis pharetra erat, non ultrices lacus lacus nec diam. Sed eu risus nibh. In porta venenatis pharetra. Nunc lorem augue, placerat eu facilisis id, vulputate ut nisi. Duis vitae arcu est, ac tristique turpis. Quisque consequat, urna mollis fermentum dictum, est nibh ullamcorper odio, sit amet auctor neque leo eget ante. Nullam at arcu ut ligula euismod malesuada id et odio. In hac habitasse platea dictumst. Nam rhoncus pellentesque dolor ut porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in rhoncus tellus. In eleifend vehicula ipsum, ac luctus sem pretium a. Sed vitae risus et quam semper scelerisque sit amet ut nisi.</p>
+
+		<p class="header">Example Links</p>
+		<ul>
+			<li><a href="http://seleniumhq.org">Selenium HQ</a></li>
+			<li><a href="http://saucelabs.com">Sauce Labs</a></li>
+			<li><a href="http://google.com" target="_blank">Google</a></li>
+		</ul>
+
+		<div id="testContent">
+			<p class="header">Example Form Elements</p>
+
+			<form action="" name="testForm">
+				<div class="field">
+					Name:<br />
+					<input id="testName" name="testName" type="text" value="John Doe" />
+				</div>
+
+				<div class="field">
+					Favorite method:<br />
+					<select id="testMethod" name="testMethod">
+						<option value="click">session/:id/click</option>
+						<option value="doubleclick">session/:id/doubleclick</option>
+						<option value="element" selected="selected">session/:id/element</option>
+						<option value="url">session/:id/url</option>
+					</select>
+				</div>
+
+				<div class="field">
+					Event type:<br />
+					<input id="testEvent" name="testEvent" type="text" value="" disabled="disabled" />
+					<input id="testButton" name="testButton" type="text" value="" disabled="disabled" style="text-align:center; width:20px;" />
+				</div>
+
+				<div class="field">
+					Description:<br />
+					<textarea name="testDesc" cols="3" rows="2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea>
+				</div>
+
+				<div class="field">
+					<input class="option" name="testCheck" type="checkbox" value="1" /> Yes &nbsp;
+					<input class="option" name="testCheck" type="checkbox" value="0" checked="checked" /> No &nbsp;
+					<input class="option" name="testCheck" type="checkbox" value="nope" disabled="disabled" /> Maybe
+				</div>
+
+				<input onclick="doAlert();" name="testAlert" type="button" value="alert" />
+				<input onclick="doConfirm();" name="testConfirm" type="button" value="confirm" />
+				<input onclick="doPrompt();" name="testPrompt" type="button" value="prompt" />
+				<input name="testSubmit" type="submit" value="submit" />
+				<input type="reset" value="reset" />
+			</form>
+		</div>
+
+		<p>
+			<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
+		</p>
+
+		<div id="testHidden"></div>
+	</body>
+</html>
