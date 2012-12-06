@@ -1,6 +1,6 @@
 Selenium-Saucelabs (S2) PHP Webdriver
 =====================================
-This allows for the integration of PHP based unit tests with a [Selenium Server][selenium] or remote [Saucelabs][saucelabs] connection.  The unit tests provided are currently compatible with Firefox [9.0][firefox] and Selenium Server [2.18][seleniumServer].
+This allows for the integration of PHP based unit tests with a [Selenium Server][selenium] or remote [Saucelabs][saucelabs] connection.  The unit tests provided are currently compatible with Firefox [17.0.1][firefox] and Selenium Server [2.25][seleniumServer].
 
 Getting Started
 ---------------
@@ -22,7 +22,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 
 [bronto]:http://www.bronto.com
-[firefox]:ftp://ftp.mozilla.org/pub/firefox/releases/9.0
+[firefox]:ftp://ftp.mozilla.org/pub/firefox/releases/17.0.1/
 [saucelabs]:http://www.saucelabs.com
 [selenium]:http://www.seleniumhq.org
-[seleniumServer]:http://selenium.googlecode.com/files/selenium-server-standalone-2.18.0.jar
+[seleniumServer]:http://selenium.googlecode.com/files/selenium-server-standalone-2.25.0.jar

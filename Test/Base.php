@@ -29,7 +29,7 @@ class Test_Base extends PHPUnit_Framework_TestCase {
 		$sessionSetup = array(
 			// default browser to use when all else fails
 			'browser'		=> 'firefox',
-			'version'		=> '9.0',
+			'version'		=> '17.0.1',
 
 			// default os/platform (ANY, XP, VISTA, or LINUX)
 			'platform'		=> 'ANY',
@@ -62,7 +62,7 @@ class Test_Base extends PHPUnit_Framework_TestCase {
 				$capabilities = array(
 					'name'				=> $this->getJobName(),
 					'platform'			=> $setup['platform'],
-					'selenium-version'	=> '2.18.0',
+					'selenium-version'	=> '2.25.0',
 				);
 
 				$setup['host'] = $setup['sauce']['user'] . ':' . $setup['sauce']['key'] . '@ondemand.saucelabs.com';
@@ -73,7 +73,7 @@ class Test_Base extends PHPUnit_Framework_TestCase {
 			$this->session = new WebDriver_Session($setup['host'], $setup['port']);
 			$this->session->setBrowser($setup['browser'], $setup['version']);
 
-			if (!is_null($capabilities)) {
+			if (isset($capabilities)) {
 				foreach ($capabilities as $capability => $value) {
 					$this->session->setCapability($capability, $value);
 				}

@@ -74,7 +74,7 @@ class WebDriver_ElementTest extends Test_Base {
 		$this->assertEquals('48px', $elementImage->css('width'));
 
 		$elementDiv = $this->session->element('id', 'testContent');
-		$this->assertEquals('rgb(206, 206, 206)', $elementDiv->css('background-color'));
+		$this->assertEquals('rgba(206, 206, 206, 1)', $elementDiv->css('background-color'));
 		$this->assertEquals('left', $elementDiv->css('text-align'));
 	}
 

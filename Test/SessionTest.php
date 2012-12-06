@@ -74,9 +74,12 @@ class WebDriver_SessionTest extends Test_Base {
 	public function testBack() {
 		$elementLink = $this->session->element('link text', 'Sauce Labs');
 		$elementLink->click();
+		sleep(3);
 
-		$this->assertEquals('http://saucelabs.com/', $this->session->url());
+		$this->assertEquals('https://saucelabs.com/', $this->session->url());
 		$this->session->back();
+		sleep(3);
+
 		$this->assertEquals($this->testWebDriver, $this->session->url());
 	}
 
@@ -207,12 +210,17 @@ class WebDriver_SessionTest extends Test_Base {
 	public function testForward() {
 		$elementLink = $this->session->element('link text', 'Sauce Labs');
 		$elementLink->click();
+		sleep(3);
 
-		$this->assertEquals('http://saucelabs.com/', $this->session->url());
+		$this->assertEquals('https://saucelabs.com/', $this->session->url());
 		$this->session->back();
+		sleep(3);
+
 		$this->assertEquals($this->testWebDriver, $this->session->url());
 		$this->session->forward();
-		$this->assertEquals('http://saucelabs.com/', $this->session->url());
+		sleep(3);
+
+		$this->assertEquals('https://saucelabs.com/', $this->session->url());
 	}
 
 
@@ -283,6 +291,8 @@ class WebDriver_SessionTest extends Test_Base {
 		$this->assertEquals(2, count($windows));
 
 		$this->session->window($windows[1]);
+		sleep(5);
+
 		$this->assertEquals('http://www.google.com/', $this->session->url());
 		$this->session->window();
 
